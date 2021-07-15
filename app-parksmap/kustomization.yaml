@@ -1,4 +1,5 @@
 resources:
+- parksmap-ns.yaml
 - deployment.yaml
 - service.yaml
 - route.yaml
