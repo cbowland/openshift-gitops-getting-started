@@ -5,7 +5,7 @@ metadata:
   namespace: myargocd
 spec:
   destination:
-    namespace: parksmap
+    namespace: default
     server: https://kubernetes.default.svc
   project: default
   source:
