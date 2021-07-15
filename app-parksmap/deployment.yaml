@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    app: parksmap
+    app.kubernetes.io/instance: parksmap
+    app.kubernetes.io/name: parksmap
+    app.kubernetes.io/part-of: parksmap
+    app.openshift.io/runtime: spring-boot
+  name: parksmap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parksmap
+  template:
+    metadata:
+      labels:
+        app: parksmap
+    spec:
+      containers:
+      - name: parksmap
+        imagePullPolicy: Always
+        image: quay.io/openshiftroadshow/parksmap:1.3.0
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        - containerPort: 8778
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 45
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
