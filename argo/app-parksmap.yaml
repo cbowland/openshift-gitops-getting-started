@@ -5,9 +5,9 @@ metadata:
   namespace: myargocd
 spec:
   destination:
-    namespace: default
+    namespace: parksmap
     server: https://kubernetes.default.svc
-  project: app-parksmap
+  project: default
   source:
     directory:
       recurse: true
