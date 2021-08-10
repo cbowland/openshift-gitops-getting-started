@@ -1,7 +1,7 @@
 apiVersion: console.openshift.io/v1
 kind: ConsoleLink
 metadata:
-  name: application-menu-ehi
+  name: application-menu-anthem
 spec:
   href: 'https://www.anthem.com/provider/medicare-advantage/'
   location: ApplicationMenu
