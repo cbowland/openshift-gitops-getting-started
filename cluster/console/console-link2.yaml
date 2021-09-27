@@ -1,4 +1,3 @@
-- this is the new console-link2.yaml
 apiVersion: console.openshift.io/v1
 kind: ConsoleLink
 metadata:
