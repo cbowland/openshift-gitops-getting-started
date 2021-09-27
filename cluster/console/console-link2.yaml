@@ -1,0 +1,13 @@
+- this is the new console-link2.yaml
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: application-menu-garmin
+spec:
+  href: 'https://www.garmin.com/en-US/'
+  location: ApplicationMenu
+  text: Garmin
+  applicationMenu:
+    section: Life On The Outside
+    imageURL: https://creative.garmin.com/styleguide/img/resources__garmin-logo-with-delta.png
+
